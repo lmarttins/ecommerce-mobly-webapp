@@ -38,6 +38,7 @@ export default {
 
     addCart (product) {
       this.$store.dispatch('addCart', product)
+      this.$store.dispatch('setTotal')
     }
   }
 }

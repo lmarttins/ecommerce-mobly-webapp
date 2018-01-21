@@ -1,7 +1,9 @@
 <template>
   <b-navbar type="light" variant="faded" class="fixed-top">
     <b-container>
-      <b-navbar-brand href="#">Mobly</b-navbar-brand>
+      <b-navbar-brand>
+        <router-link :to="{ path: '/' }">Mobly</router-link>
+      </b-navbar-brand>
       <cart></cart>
     </b-container>
   </b-navbar>

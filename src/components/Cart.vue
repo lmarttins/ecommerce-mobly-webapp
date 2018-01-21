@@ -3,13 +3,20 @@
     <b-btn id="cart-message" variant="outline-success">
       <i class="fa fa-shopping-cart"></i> {{ amount }}
     </b-btn>
-    <b-popover target="cart-message" triggers="hover focus" placement="bottomleft" v-if="showMessageEmpty()">
-      Seu carrinho está vazio.
+    <b-popover target="cart-message"
+      triggers="hover blur"
+      placement="bottomleft"
+      v-if="showMessageEmpty()">
+      Seu carrinho de compras está vazio.
     </b-popover>
-    <b-popover target="cart-message" triggers="hover" no-fade placement="bottomleft" v-if="!showMessageEmpty()">
-      <b-btn id="cart-message" variant="success">
+    <b-popover target="cart-message"
+    triggers="click blur"
+    no-fade
+    placement="bottomleft"
+    v-if="!showMessageEmpty()">
+      <b-link href="/checkout" id="cart-message" variant="primary">
         Concluir compra ({{ amount }} itens)
-      </b-btn>
+      </b-link>
     </b-popover>
   </div>
 </template>
@@ -25,11 +32,7 @@ export default {
     }),
     ...mapGetters([
       'amount'
-    ]),
-    items () {
-      let items = JSON.parse(localStorage.getItem('cart')) || []
-      return items
-    }
+    ])
   },
   methods: {
     showMessageEmpty () {
