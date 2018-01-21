@@ -5,12 +5,26 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 
 export default {
   name: 'Cart',
+  computed: {
+    ...mapState({
+      cartStore: state => state.CartStore
+    }),
+
+    amount () {
+      let items = JSON.parse(localStorage.getItem('cart')) || []
+      if (this.cartStore.amount !== items) {
+        return items.length
+      }
+
+      return this.cartStore.amount
+    }
+  },
   data () {
     return {
-      amount: 0,
       message: 'Seu carrinho está vazio'
     }
   }

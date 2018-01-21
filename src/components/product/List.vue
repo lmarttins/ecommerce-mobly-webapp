@@ -1,16 +1,15 @@
 <template>
   <div>
     <b-card-group deck>
-      <b-card v-for="product in products"
+      <b-card v-for="product in products" :key="product.id"
         img-src="https://placekitten.com/1000/300"
-        header-tag="header"
         :title="product.name">
         <p class="card-text">
           {{ product.description }}
         </p>
-        <b-button href="#" variant="success">
-          Adicionar no carrinho
-        </b-button>
+        <a href="#" class="btn btn-success" v-on:click="addCart(product)">
+          Adicionar ao carrinho
+        </a>
       </b-card>
   </b-card-group>
   </div>
@@ -35,6 +34,10 @@ export default {
         .then((response) => {
           this.products = response.data.data
         })
+    },
+
+    addCart (product) {
+      this.$store.dispatch('addCart', product)
     }
   }
 }
