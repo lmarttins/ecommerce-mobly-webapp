@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueResource)
 
-/* eslint-disable no-new */
+/* eslint-disable */
 new Vue({
   el: '#app',
   router,

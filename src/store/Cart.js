@@ -20,6 +20,17 @@ const actions = {
   }
 }
 
+const getters = {
+  amount: () => {
+    let items = JSON.parse(localStorage.getItem('cart')) || []
+    if (state.amount !== items) {
+      return items.length
+    }
+
+    return state.amount
+  }
+}
+
 export default {
-  state, mutations, actions
+  state, mutations, actions, getters
 }
