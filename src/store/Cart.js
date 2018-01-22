@@ -11,7 +11,7 @@ const mutations = {
 
     if (cart[product.id - 1]) {
       cart[product.id - 1].amount++
-      cart[product.id - 1].total = (cart[product.id - 1].amount)  * product.price
+      cart[product.id - 1].total = (cart[product.id - 1].amount) * product.price
     } else {
       cart[product.id - 1] = {
         id: product.id,
@@ -30,12 +30,12 @@ const mutations = {
   },
 
   [types.SET_TOTAL] (state) {
-	  let items = JSON.parse(localStorage.getItem('cart')) || []
+    let items = JSON.parse(localStorage.getItem('cart')) || []
 
     let total = 0
 
     items.forEach((item) => {
-	    total += item.total
+      total += item.total
     })
 
     state.total = total

@@ -11,6 +11,6 @@ export default new Router({
   routes: [
     {path: '/', name: 'home', component: ProductList},
     {path: '/checkout', name: 'checkout', component: Checkout},
-	  {path: '/order', name: 'order', component: Order}
-  ],
+    {path: '/order', name: 'order', component: Order}
+  ]
 })

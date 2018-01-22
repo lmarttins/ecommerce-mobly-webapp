@@ -20,7 +20,7 @@ import {mapGetters} from 'vuex'
 export default {
   name: 'Calculate',
   props: {
-  	showBtn: {
+    showBtn: {
       type: Boolean,
       required: false
     }

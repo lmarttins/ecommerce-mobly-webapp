@@ -47,8 +47,8 @@ export default {
     ])
   },
   components: {
-	  Calculate,
-	  Stock
+    Calculate,
+    Stock
   },
   data () {
     return {

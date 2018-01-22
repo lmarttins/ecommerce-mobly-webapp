@@ -47,9 +47,9 @@ export default {
     ])
   },
   data () {
-  	return {
+    return {
       data: {
-      	user: {},
+        user: {},
         address: {},
         total: 0
       }
@@ -59,9 +59,8 @@ export default {
     Calculate
   },
   methods: {
-  	onSubmit (evt) {
+    onSubmit (evt) {
       evt.preventDefault()
-
       this.$http.post(API_URL + '/api/v1/orders', this.data)
         .then((response) => {
           this.$store.dispatch('clearCart')
@@ -72,7 +71,7 @@ export default {
     }
   },
   created () {
-  	this.data.total = this.getTotal
+    this.data.total = this.getTotal
   }
 }
 </script>
