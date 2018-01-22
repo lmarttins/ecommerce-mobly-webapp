@@ -4,10 +4,10 @@
     <calculate :show-btn="false"></calculate>
     <b-form @submit="onSubmit">
       <b-form-group label="Nome">
-        <b-form-input v-model="data.user.last_name"></b-form-input>
+        <b-form-input v-model="data.user.first_name"></b-form-input>
       </b-form-group>
       <b-form-group label="Sobrenome">
-        <b-form-input v-model="data.user.first_name"></b-form-input>
+        <b-form-input v-model="data.user.last_name"></b-form-input>
       </b-form-group>
       <b-form-group label="Email" type="email">
         <b-form-input v-model="data.user.email"></b-form-input>
@@ -40,7 +40,7 @@ import {API_URL} from '@/env'
 import Calculate from '@/components/Calculate'
 
 export default {
-  name: 'Order',
+  name: 'FinishOrder',
   computed: {
     ...mapGetters([
       'getTotal'

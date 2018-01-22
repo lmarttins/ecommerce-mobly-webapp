@@ -9,19 +9,18 @@
         <tbody>
         <tr v-for="item in getItems" :key="item.id">
           <th scope="row">
-            <b-img thumbnail fluid src="https://lorempixel.com/50/50/technics/4/" alt="Thumbnail" />
+            <img :src="item.image" style="height:50px;width:50px">
           </th>
           <td style="font-size:14px">
-            <a class="product-name mb-5" href="/Cadeira-de-Escritorio-Teen-Grant-Preta-198211.html">
+            <a class="product-name mb-5" href="#">
               <strong>{{ item.name }}</strong>
             </a>
             <br><span class="block mb-5"><strong>Descrição: </strong>{{ item.description }}</span>
             <br><span class="mr-15">
-            <strong>Cor:</strong> Preto
             </span>
           </td>
           <td>
-            <stock :qty="item.stock" :selected="item.amount"></stock>
+            <stock :quantity="item.stock" :selected="item.amount"></stock>
           </td>
           <td>R$ {{ item.price }}</td>
           <td>

@@ -4,6 +4,7 @@
       <b-navbar-brand>
         <router-link :to="{ path: '/' }">Shopping Cart</router-link>
       </b-navbar-brand>
+      <b-link :to="{ name: 'listing.order' }" class="btn btn-primary">Lista de pedidos</b-link>
       <cart></cart>
     </b-container>
   </b-navbar>

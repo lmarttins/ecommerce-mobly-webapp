@@ -6,7 +6,7 @@
         <h4 class="text-dark">{{ getTotal }}</h4>
       </b-col>
       <b-col md="4" class="text-right p-3">
-        <b-button :to="{ name: 'order' }" size="lg" variant="success" v-show="showBtn">
+        <b-button :to="{ name: 'finish.order' }" size="lg" variant="success" v-show="showBtn">
           Finalizar pedido
         </b-button>
       </b-col>

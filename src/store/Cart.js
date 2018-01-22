@@ -19,7 +19,8 @@ const mutations = {
         price: product.price,
         amount: 1,
         stock: product.stock,
-        total: product.price
+        total: product.price,
+        image: product.image
       })
     } else {
       items.forEach((item, index) => {

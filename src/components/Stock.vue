@@ -1,12 +1,12 @@
 <template>
-  <b-form-select v-model="selected" :options="stock(qty)" class="mb-3"></b-form-select>
+  <b-form-select v-model="selected" :options="stock(quantity)" class="mb-3"></b-form-select>
 </template>
 
 <script>
 export default {
   name: 'Stock',
   props: {
-    qty: {
+    quantity: {
       type: Number,
       required: false
     },
@@ -16,8 +16,8 @@ export default {
     }
   },
   methods: {
-    stock (qty) {
-      return [...Array(qty).keys()]
+    stock (quantity) {
+      return [...Array(quantity).keys()]
     }
   }
 }

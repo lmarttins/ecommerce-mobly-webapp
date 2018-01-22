@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-card-group columns>
+    <b-card-group deck>
       <b-card v-for="product in products" :key="product.id"
-        img-src="https://placekitten.com/1000/300"
+        :img-src="product.image"
         :title="product.name">
         <p class="card-text">
           {{ product.description }}
