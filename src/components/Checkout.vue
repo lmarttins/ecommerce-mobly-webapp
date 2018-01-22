@@ -3,7 +3,7 @@
     <b-row>
       <h2 class="text-success">Meu carrinho</h2>
     </b-row>
-    <order></order>
+    <calculate :show-btn="true"></calculate>
     <b-row>
       <table class="table">
         <tbody>
@@ -37,7 +37,7 @@
 <script>
 import {mapGetters} from 'vuex'
 import Stock from '@/components/Stock'
-import Order from '@/components/Order'
+import Calculate from '@/components/Calculate'
 
 export default {
   name: 'Checkout',
@@ -47,8 +47,8 @@ export default {
     ])
   },
   components: {
-    Stock,
-    Order
+	  Calculate,
+	  Stock
   },
   data () {
     return {

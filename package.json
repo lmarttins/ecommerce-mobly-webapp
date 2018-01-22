@@ -14,6 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@deveodk/vue-toastr": "^1.0.4",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-vue": "^1.4.1",
     "vue": "^2.5.2",

@@ -41,6 +41,11 @@ const mutations = {
     state.total = total
 
     window.localStorage.setItem('total', total)
+  },
+
+  [types.CLEAR_CART] (state) {
+    state.amount = 0
+    window.localStorage.clear()
   }
 }
 
@@ -51,6 +56,10 @@ const actions = {
 
   setTotal: ({commit}) => {
     commit('SET_TOTAL')
+  },
+
+  clearCart: ({commit}) => {
+    commit('CLEAR_CART')
   }
 }
 
@@ -76,7 +85,7 @@ const getters = {
   },
 
   getTotal: () => {
-    let total = window.localStorage.getItem('total')
+    let total = window.localStorage.getItem('total') || 0
 
     return total.toLocaleString('pt-BR')
   }

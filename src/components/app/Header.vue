@@ -2,7 +2,7 @@
   <b-navbar type="light" variant="faded" class="fixed-top">
     <b-container>
       <b-navbar-brand>
-        <router-link :to="{ path: '/' }">Mobly</router-link>
+        <router-link :to="{ path: '/' }">Shopping Cart</router-link>
       </b-navbar-brand>
       <cart></cart>
     </b-container>
