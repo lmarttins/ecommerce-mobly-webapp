@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card-group deck class="mb-5">
+    <b-card-group columns>
       <b-card v-for="product in products" :key="product.id"
         img-src="https://placekitten.com/1000/300"
         :title="product.name">
