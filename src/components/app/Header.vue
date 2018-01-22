@@ -1,5 +1,5 @@
 <template>
-  <b-navbar type="light" variant="faded" class="fixed-top">
+  <b-navbar type="light" variant="faded" class="fixed-top bg-white">
     <b-container>
       <b-navbar-brand>
         <router-link :to="{ path: '/' }">Shopping Cart</router-link>

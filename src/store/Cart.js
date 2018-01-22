@@ -7,13 +7,12 @@ const state = {
 
 const mutations = {
   [types.ADD_TO_CART] (state, product) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || []
+    let items = JSON.parse(localStorage.getItem('cart')) || []
 
-    if (cart[product.id - 1]) {
-      cart[product.id - 1].amount++
-      cart[product.id - 1].total = (cart[product.id - 1].amount) * product.price
-    } else {
-      cart[product.id - 1] = {
+    const record = items.find(p => p.id === product.id)
+
+    if (!record) {
+      items.push({
         id: product.id,
         name: product.name,
         description: product.description,
@@ -21,10 +20,16 @@ const mutations = {
         amount: 1,
         stock: product.stock,
         total: product.price
-      }
+      })
+    } else {
+      items.forEach((item, index) => {
+        if (product.id === item.id) {
+          items[index].amount++
+        }
+      })
     }
 
-    window.localStorage.setItem('cart', JSON.stringify(cart))
+    window.localStorage.setItem('cart', JSON.stringify(items))
 
     state.amount++
   },
@@ -50,7 +55,7 @@ const mutations = {
 }
 
 const actions = {
-  addCart: ({commit}, product) => {
+  addToCart: ({commit}, product) => {
     commit('ADD_TO_CART', product)
   },
 

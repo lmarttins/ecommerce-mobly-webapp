@@ -7,7 +7,7 @@
         <p class="card-text">
           {{ product.description }}
         </p>
-        <a href="#" class="btn btn-success" v-on:click="addCart(product)">
+        <a href="#" class="btn btn-success" v-on:click="addToCart(product)">
           Adicionar ao carrinho
         </a>
       </b-card>
@@ -36,8 +36,8 @@ export default {
         })
     },
 
-    addCart (product) {
-      this.$store.dispatch('addCart', product)
+    addToCart (product) {
+      this.$store.dispatch('addToCart', product)
       this.$store.dispatch('setTotal')
     }
   }
